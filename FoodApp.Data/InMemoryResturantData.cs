@@ -51,6 +51,11 @@ namespace FoodApp.Data
             return restaurants.FirstOrDefault(x => x.ID == id);
         }
 
+        public int GetCountRestaurants()
+        {
+           return restaurants.Count();
+        }
+
         public IEnumerable<Restaurant> GetRestaurantsByName(string name = null)
         {
             return from r in restaurants
