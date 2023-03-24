@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoodApp.ViewComponents
 {
+    [ViewComponent(Name = "RestaurantCount")]
     public class RestuarantCountViewComponent : ViewComponent
     {
         private readonly IRestaurantData restaurantData;
@@ -11,7 +12,7 @@ namespace FoodApp.ViewComponents
         {
             this.restaurantData = restaurantData;
         }
-        public IViewComponentResult Invoke() 
+        public IViewComponentResult Invoke()
         {
             var count = restaurantData.GetCountRestaurants();
             return View(count);

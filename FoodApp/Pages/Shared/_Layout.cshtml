@@ -47,7 +47,11 @@
     <footer class="border-top footer text-muted">
         
         <div class="container">
-            <vc:restuarant-count></vc:restuarant-count>
+            <vc:restaurant-count></vc:restaurant-count>
+            <!--<div> 
+                @await Component.InvokeAsync("RestaurantCount")
+            </div>-->
+            
             @RenderSection("footer", required:false)
             &copy; 2023 - Mounya Zekraoui - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
