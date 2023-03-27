@@ -1,4 +1,4 @@
-using FoodApp.Api;
+
 using FoodApp.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -16,6 +16,7 @@ builder.Services.AddDbContextPool<FoodAppContext>(options => {
 });
 
 builder.Services.AddScoped<IRestaurantData, SqlRestaurantData>();
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 

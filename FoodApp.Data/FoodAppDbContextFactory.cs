@@ -11,6 +11,7 @@ namespace FoodApp.Data
     public class FoodAppDbContextFactory : IDesignTimeDbContextFactory<FoodAppContext> 
   
     {
+        
         public FoodAppContext CreateDbContext(string[] args)
         {
             var optionBuilder = new DbContextOptionsBuilder<FoodAppContext>();

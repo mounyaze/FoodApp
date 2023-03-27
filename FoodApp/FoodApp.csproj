@@ -36,8 +36,4 @@
     <None Include="wwwroot\bg.jpg" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Api\" />
-  </ItemGroup>
-
 </Project>
