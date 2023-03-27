@@ -2,6 +2,8 @@
 using FoodApp.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Runtime.Loader;
+using System.Web.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +24,7 @@ builder.Services.AddEndpointsApiExplorer();
 
 
 var app = builder.Build();
+DependencyResolver.SetResolver(new AutofacDependencyResolver)
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
