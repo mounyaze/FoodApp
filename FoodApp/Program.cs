@@ -3,6 +3,7 @@ using FoodApp.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Runtime.Loader;
+using Microsoft.AspNetCore.Hosting;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,6 +27,8 @@ builder.Services.AddEndpointsApiExplorer();
 var app = builder.Build();
 
 
+
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -38,9 +41,13 @@ app.UseHttpsRedirection();
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
+
+
+
 app.UseRouting();
 
 app.UseAuthorization();
+app.MapControllers();
 
 app.MapRazorPages();
 

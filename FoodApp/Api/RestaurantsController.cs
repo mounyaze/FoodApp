@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using FoodApp.Core;
 using FoodApp.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FoodApp.Api
 {
@@ -22,6 +23,7 @@ namespace FoodApp.Api
         }
 
         // GET: api/Restaurants
+       
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Restaurant>>> GetRestaurants()
         {
