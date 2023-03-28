@@ -3,7 +3,7 @@ using FoodApp.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Runtime.Loader;
-using System.Web.Mvc;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +13,7 @@ builder.Services.AddRazorPages();
 
 
 
-builder.Services.AddDbContextPool<FoodAppContext>(options => {
+builder.Services.AddDbContext<FoodAppContext>(options => {
     options.UseSqlServer(builder.Configuration.GetConnectionString("FoodAppCore"));
 });
 
@@ -24,7 +24,7 @@ builder.Services.AddEndpointsApiExplorer();
 
 
 var app = builder.Build();
-DependencyResolver.SetResolver(new AutofacDependencyResolver)
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -35,6 +35,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseDefaultFiles();
 app.UseStaticFiles();
 
 app.UseRouting();
