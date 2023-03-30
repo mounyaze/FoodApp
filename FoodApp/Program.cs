@@ -26,6 +26,17 @@ builder.Services.AddEndpointsApiExplorer();
 
 var app = builder.Build();
 
+MigrateDatabase(app);
+
+void MigrateDatabase(WebApplication app)
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        var db = scope.ServiceProvider.GetRequiredService<FoodAppContext>();
+        db.Database.Migrate();
+    }
+}
+
 
 
 
