@@ -188,6 +188,7 @@
     <None Include="node_modules\jquery\src\var\whitespace.js" />
     <None Include="node_modules\jquery\src\wrap.js" />
     <None Include="wwwroot\bg.jpg" />
+    <None Include="wwwroot\resto.png" />
   </ItemGroup>
 
   <ItemGroup>
